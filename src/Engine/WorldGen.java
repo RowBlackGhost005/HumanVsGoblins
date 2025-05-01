@@ -14,10 +14,6 @@ public class WorldGen {
 
     public WorldGen() {
         initWorld();
-
-        printWorld();
-
-
     }
 
     public void initWorld(){
