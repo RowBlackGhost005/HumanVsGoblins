@@ -63,14 +63,88 @@ public class WorldGen {
         playerPosition.setNorth(new Land());
         playerPosition.getWest().setNorth(new Land());
 
-        //Generating the connection between norths
+        //Generating connections between norths
         // - - -
         // x x x
         playerPosition.getNorth().setEast(playerPosition.getEast().getNorth());
         playerPosition.getNorth().setWest(playerPosition.getWest().getNorth());
     }
 
+    public Entity peakEast(){
+        return playerPosition.getEast().getEntity();
+    }
 
+    public void moveEast(){
+        Player player = (Player) playerPosition.getEntity();
+        playerPosition.setEntity(null);
+        playerPosition = playerPosition.getEast();
+        playerPosition.setEntity(player);
+
+        //Generating new Easts
+        // x -
+        // x -
+        // x -
+        playerPosition.getNorth().setEast(new Land());
+        playerPosition.setEast(new Land());
+        playerPosition.getSouth().setEast(new Land());
+
+        //Generating connection between Easts
+        // x |
+        // x |
+        // x |
+        playerPosition.getEast().setNorth(playerPosition.getNorth().getEast());
+        playerPosition.getEast().setSouth(playerPosition.getSouth().getEast());
+    }
+
+    public Entity peakSouth(){
+        return playerPosition.getSouth().getEntity();
+    }
+
+    public void moveSouth(){
+        Player player = (Player) playerPosition.getEntity();
+        playerPosition.setEntity(null);
+        playerPosition = playerPosition.getSouth();
+        playerPosition.setEntity(player);
+
+        //Generating new Souths
+        // x x x
+        // | | |
+        playerPosition.getEast().setSouth(new Land());
+        playerPosition.setSouth(new Land());
+        playerPosition.getWest().setSouth(new Land());
+
+        //Generating connections between Souths
+        // x x x
+        // - - -
+        playerPosition.getSouth().setEast(playerPosition.getEast().getSouth());
+        playerPosition.getSouth().setWest(playerPosition.getWest().getSouth());
+    }
+
+    public Entity peakWest(){
+        return playerPosition.getWest().getEntity();
+    }
+
+    public void moveWest(){
+        Player player = (Player) playerPosition.getEntity();
+        playerPosition.setEntity(null);
+        playerPosition = playerPosition.getWest();
+        playerPosition.setEntity(player);
+
+        //Generating new Wests
+        // - x
+        // - x
+        // - x
+        playerPosition.getNorth().setWest(new Land());
+        playerPosition.setWest(new Land());
+        playerPosition.getSouth().setWest(new Land());
+
+        //Generating connections between Wests
+        // | x
+        // | x
+        // | x
+        playerPosition.getWest().setNorth(playerPosition.getNorth().getWest());
+        playerPosition.getWest().setSouth(playerPosition.getSouth().getWest());
+    }
 
     public void printWorld(){
         System.out.printf("%s%s%s\n", playerPosition.getNorth().getWest() , playerPosition.getNorth(), playerPosition.getNorth().getEast());
@@ -81,5 +155,17 @@ public class WorldGen {
 
     public void printNorth(){
         System.out.printf("%s%s%s\n", playerPosition.getNorth().getWest() , playerPosition.getNorth(), playerPosition.getNorth().getEast());
+    }
+
+    public void printEast(){
+        System.out.printf("%s\n%s\n%s\n", playerPosition.getNorth().getEast() , playerPosition.getEast(), playerPosition.getSouth().getEast());
+    }
+
+    public void printSouth(){
+        System.out.printf("%s%s%s\n", playerPosition.getSouth().getWest() , playerPosition.getSouth(), playerPosition.getSouth().getEast());
+    }
+
+    public void printWest(){
+        System.out.printf("%s\n%s\n%s\n", playerPosition.getNorth().getWest(), playerPosition.getWest(), playerPosition.getSouth().getWest());
     }
 }
