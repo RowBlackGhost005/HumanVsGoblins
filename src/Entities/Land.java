@@ -1,7 +1,12 @@
 package Entities;
 
+
+import java.util.Random;
+import java.util.random.RandomGenerator;
+
 public class Land {
 
+    private static RandomGenerator numberGenerator = new Random();
     Land north;
     Land south;
     Land east;
@@ -10,7 +15,7 @@ public class Land {
     Entity entity;
 
     public Land () {
-        this.entity = null;
+        generateEntity();
     }
 
     public Land getNorth () {
@@ -66,6 +71,16 @@ public class Land {
 
     public void setEntity(Entity entity) {
         this.entity = entity;
+    }
+
+    public void generateEntity(){
+        int probability = numberGenerator.nextInt(100);
+
+        if(probability <= 20){
+            setEntity(new Goblin());
+        }else{
+            setEntity(null);
+        }
     }
 
     @Override
