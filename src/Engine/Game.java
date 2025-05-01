@@ -10,6 +10,10 @@ public class Game {
         world = new WorldGen();
     }
 
+    public void showMap(){
+        world.printWorld();
+    }
+
     public void moveNorth() {
         //Ask to peak
         Entity entity = world.peakNorth();
@@ -60,5 +64,9 @@ public class Game {
 
         //If all good, move
         world.moveWest();
+    }
+
+    public boolean gameOver(){
+        return false;
     }
 }
