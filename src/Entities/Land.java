@@ -23,7 +23,10 @@ public class Land {
     }
 
     public void setNorth (Land land) {
-        this.north = land;
+        if(this.north == null){
+            this.north = land;
+        }
+
         if(land.getSouth() == null){
             land.setSouth(this);
         }
@@ -34,7 +37,10 @@ public class Land {
     }
 
     public void setSouth (Land land) {
-        this.south = land;
+
+        if(this.south == null){
+            this.south = land;
+        }
 
         if(land.getNorth() == null){
             land.setNorth(this);
@@ -47,7 +53,10 @@ public class Land {
     }
 
     public void setEast (Land land) {
-        this.east = land;
+        if(this.east == null){
+            this.east = land;
+        }
+
         if(land.getWest() == null){
             land.setWest(this);
         }
@@ -59,7 +68,10 @@ public class Land {
     }
 
     public void setWest (Land land) {
-        this.west = land;
+        if(this.west == null){
+            this.west = land;
+        }
+
         if(land.getEast() == null){
             land.setEast(this);
         }
