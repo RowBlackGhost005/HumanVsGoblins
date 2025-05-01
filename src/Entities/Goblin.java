@@ -1,4 +1,10 @@
 package Entities;
 
-public class Goblin {
+public class Goblin extends Entity{
+
+
+    @Override
+    public String toString() {
+        return "▲";
+    }
 }

@@ -8,16 +8,6 @@ public class Game {
 
     public Game() {
         world = new WorldGen();
-
-        //Testing all cases
-        moveNorth();
-        world.printNorth();
-        moveEast();
-        world.printEast();
-        moveSouth();
-        world.printSouth();
-        moveWest();
-        world.printWest();
     }
 
     public void moveNorth() {
