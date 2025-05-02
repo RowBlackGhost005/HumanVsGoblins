@@ -1,4 +1,4 @@
-package Entities;
+package entities;
 
 /**
  * Goblin is the entity that represents the basic enemy of the game.

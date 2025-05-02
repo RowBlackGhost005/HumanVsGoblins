@@ -1,7 +1,7 @@
-package Engine;
+package engine;
 
-import Entities.Entity;
-import Entities.Goblin;
+import entities.Entity;
+import entities.Goblin;
 
 /**
  * Game class holds the game state and acts as the orchestrator of the game.

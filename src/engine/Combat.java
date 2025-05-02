@@ -1,7 +1,7 @@
-package Engine;
+package engine;
 
-import Entities.Entity;
-import Entities.Goblin;
+import entities.Entity;
+import entities.Goblin;
 import java.util.Random;
 import java.util.random.RandomGenerator;
 
