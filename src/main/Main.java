@@ -26,23 +26,18 @@ public class Main {
             System.out.println("What direction would you like to go?");
             char direction = userInput.nextLine().toLowerCase().charAt(0);
 
-            switch(direction){
-                case 'w':
-                    game.moveNorth();
-                    break;
+            game.move(direction);
 
-                case 's':
-                    game.moveSouth();
-                    break;
-
-                case 'd':
-                    game.moveEast();
-                    break;
-
-                case 'a':
-                    game.moveWest();
-                    break;
+            if(game.isInCombat()){
+                System.out.println("\n" + game.getActiveCombat().combatType());
+                System.out.println("Press Enter to continue:");
+                userInput.nextLine();
+                System.out.println(game.execCombat());
             }
+
+            System.out.println(" - - - - - - ");
         }
+
+        System.out.println("\nGame Over :(");
     }
 }

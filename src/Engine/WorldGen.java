@@ -143,6 +143,7 @@ public class WorldGen {
     }
 
     public void printWorld(){
+        System.out.println("\n======\n");
         System.out.printf("%s%s%s\n", playerPosition.getNorth().getWest() , playerPosition.getNorth(), playerPosition.getNorth().getEast());
         System.out.printf("%s%s%s\n", playerPosition.getWest() , playerPosition, playerPosition.getEast());
         System.out.printf("%s%s%s\n", playerPosition.getSouth().getWest() , playerPosition.getSouth(), playerPosition.getSouth().getEast());
