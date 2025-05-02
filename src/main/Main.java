@@ -1,7 +1,7 @@
 package main;
 
-import Engine.Game;
-import Engine.WorldGen;
+import engine.Game;
+
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Human vs Goblins Game!");
         System.out.println("In this game you are a human who is moving through a grid world full of goblins and treasuries!");
         System.out.println("\nInstructions: To move, type the direction you want to go (W (Forward) | A (Right) | S (Back) | D (Left))");
-        System.out.println("Press enter to start the game!\n======");
+        System.out.println("Press enter to start the game!\n ========");
 
         userInput.nextLine();
 

@@ -1,8 +1,8 @@
-package Engine;
+package engine;
 
-import Entities.Entity;
-import Entities.Land;
-import Entities.Player;
+import entities.Entity;
+import entities.Land;
+import entities.Player;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -184,11 +184,11 @@ public class WorldGen {
      * Prints the world in console as a 3 x 3 matrix with the user in the middle.
      */
     public void printWorld(){
-        System.out.println("\n======\n");
-        System.out.printf("%s%s%s\n", playerPosition.getNorth().getWest() , playerPosition.getNorth(), playerPosition.getNorth().getEast());
-        System.out.printf("%s%s%s\n", playerPosition.getWest() , playerPosition, playerPosition.getEast());
-        System.out.printf("%s%s%s\n", playerPosition.getSouth().getWest() , playerPosition.getSouth(), playerPosition.getSouth().getEast());
-        System.out.println("\n======\n");
+        System.out.println("\n=======\n");
+        System.out.printf(" %s %s %s \n", playerPosition.getNorth().getWest() , playerPosition.getNorth(), playerPosition.getNorth().getEast());
+        System.out.printf(" %s %s %s \n", playerPosition.getWest() , playerPosition, playerPosition.getEast());
+        System.out.printf(" %s %s %s \n", playerPosition.getSouth().getWest() , playerPosition.getSouth(), playerPosition.getSouth().getEast());
+        System.out.println("\n=======\n");
     }
 
     /**

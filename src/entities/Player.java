@@ -1,4 +1,4 @@
-package Entities;
+package entities;
 
 /**
  * Player is the entity representing the user inside the game.
