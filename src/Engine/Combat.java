@@ -9,14 +9,13 @@ import java.util.random.RandomGenerator;
  * Combat Class that manages the combat between the Player and an Entity
  * This class is used to create and hold the information of a Combat and execute it when needed it by
  * the game.
- *
  * This class cannot be a game state by itself due to it needing the Player that is going to be hold by the Game Class.
  */
 public class Combat {
 
     private Entity entity;
     private boolean combatWon;
-    private static RandomGenerator probability = new Random();
+    private static final RandomGenerator probability = new Random();
 
     /**
      * Creates a new Combat object with the given entity.
@@ -43,7 +42,7 @@ public class Combat {
 
     /**
      * Return weather this Combat was won by the Player.
-     * @return
+     * @return True if the combat was won by the player, False otherwise
      */
     public boolean isWon(){
         return combatWon;
